@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 # from main.rating.models import Rating
 
-from rating.views import RatingsListView
+from rating.views import RatingsListView, RatingsDetailView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RatingsListView.as_view()),
+    path('rating/<int:pk>/', RatingsDetailView.as_view()),
 ]
